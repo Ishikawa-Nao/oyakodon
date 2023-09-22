@@ -1,0 +1,70 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+<div class="world">
+<h3>キーワードで探す</h3>
+</div>
+ <%= form_tag({controller:"worlds",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+
+
+<% if user_signed_in? %>
+   <% if current_user.admin? %>
+     <%= link_to "新規投稿へ", new_world_path %>
+   <% end %>
+ <% end %>
+<div class="worlds-container">
+  <% @worlds.each do |t| %>
+    <div class="world">
+
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+
+      <%= t.name %>
+      <%= t.genre %>
+      <%= t.area %>
+
+    <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+            <%= link_to world_like_path(id: t.id, world_id: t.id), method: :delete do %>  
+                <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to world_likes_path(id: t.id, world_id: t.id), method: :post do %>                
+                <i class="far fa-heart"></i><%= t.likes.count %>
+            <% end %>
+        <% end %>
+    <% else %>   
+    <% end %>
+
+            <i class="far fa-heart"></i><%= t.likes.count %>
+            <%= link_to "詳細へ", world_path(t.id) %>
+    </div>
+  <% end %>
+
+  <br>
+  <h3>いいねランキング</h3>
+  <% @rank_worlds.each do |t| %>
+
+    <%= t.name %>
+      <%= t.genre %>
+      <%= t.area %>
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+
+      <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+          <%= link_to world_like_path(id: t.id, world_id: t.id), method: :delete do %>  
+              <i class="fas fa-heart"></i><%= t.likes.count %>
+          <% end %>
+      <% else %>
+          <%= link_to world_likes_path(id: t.id, world_id: t.id), method: :post do %>                
+              <i class="far fa-heart"></i><%= t.likes.count %>
+          <% end %>
+      <% end %>
+  <% else %>   
+  <% end %>
+
+      <br>
+    <% end %>
+
+</div>

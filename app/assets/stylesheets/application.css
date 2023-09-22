@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ *{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+      background-color: rgb(235, 112, 108);
+  }
+  header {
+    background-color: rgb(235, 112, 108);
+    height: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header a {
+    color: white; 
+    text-decoration: none; 
+    
+    font-family: 'Croissant One', cursive;
+    font-family: 'Martian Mono', monospace;
+
+  }
+ 
+  header h1 {
+    font-family: 'Croissant One', cursive;
+font-family: 'Martian Mono', monospace;
+
+    color: white;
+    margin-left: 20px;
+  }
+
+  .h1{
+    color: rgb(71, 71, 71); 
+  }

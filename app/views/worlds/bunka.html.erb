@@ -1,0 +1,8 @@
+<h1>文化遺産</h1>
+<% @bunkas.each do |t| %>
+   
+  <p><%= t.name %><br></p>
+  <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>
+  <%= link_to "詳細へ", world_path(t.id) %>
+  
+<% end %>

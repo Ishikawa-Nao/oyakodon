@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'application', :media => "all" %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Oyakodon</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://kit.fontawesome.com/78b38341ad.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Martian+Mono:wght@800&family=Noto+Serif+JP:wght@200;900&display=swap" rel="stylesheet">
+    
+  </head>
+
+  <body>
+  
+
+<header>
+  <h1><%= link_to "HERITO", worlds_top_path %></h1>
+  <%= link_to "エリアで探す",worlds_area_path %>
+  <%= link_to "ジャンルで探す",worlds_genre_path %>
+  <%= link_to "検索",worlds_path %>
+  <div class="header-list">
+   <ul>
+    <% if user_signed_in? %>
+     <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+     <li><%= link_to "ログイン", new_user_session_path %></li>
+     <li><%= link_to "新規登録", new_user_registration_path %></li>
+     <% end %>
+   </ul>
+  </div>
+ </header>
+ <main>
+ <%= yield %>
+</main>
+  </body>
+</html>

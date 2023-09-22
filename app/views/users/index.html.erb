@@ -1,0 +1,65 @@
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+<h1>HERITO</h1>
+<h3>新規投稿ページ</h3>
+<%= form_for @world do |f| %>
+
+# データ型がstringで自由記述の入力フォーム
+  <div class="field">
+    <%= f.label :名称 %>
+    <%= f.text_field :name, :size => 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+
+# データ型がstringで選択式の入力フォーム
+  <div class="field">
+    <%= f.label :ジャンル  %>
+    <%= f.select :genre, 
+    [["文化遺産", "文化遺産"], 
+    ["自然遺産", "自然遺産"], 
+    ["危機遺産", "危機遺産"],
+    ["負の遺産", "負の遺産"]], include_blank: "選択して下さい" %>
+  </div>
+
+# データ型がstringで選択式の入力フォーム
+  <div class="field">
+    <%= f.label :エリア  %>
+    <%= f.select :area, 
+    [["北海道・東北地方", "北海道・東北地方"], 
+    ["関東地方", "関東地方"], 
+    ["中部地方", "中部地方"],
+    ["近畿地方", "近畿地方"],
+    ["中国・四国地方", "中国・四国地方"],
+    ["九州・沖縄地方", "九州・沖縄地方"]], include_blank: "選択して下さい" %>
+  </div>
+
+# データ型がstringで自由記述の入力フォーム
+  <div class="field">
+    <%= f.label :住所 %>
+    <%= f.text_field :address, :size => 30 %>
+  </div>
+
+# データ型がdateで自由記述の入力フォーム
+  <div class ="input-date">
+    <input name="date" type="date" />
+  </div>
+
+  
+
+# データ型がtextで自由記述の入力フォーム
+  <div class="field">
+    <%= f.label :詳細  %>
+    <%= f.text_area :about, :size => "30x2" %>
+  </div>
+
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", worlds_path %>
+<% end %>
+<% end %>
