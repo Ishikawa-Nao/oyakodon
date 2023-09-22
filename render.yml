@@ -1,0 +1,21 @@
+databases:
+  - name: oyakodon_DB
+    databaseName: oyakodon_db
+    user: oyakodon
+    region: singapore
+
+services:
+  - type: web
+    name: oyakodon
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: oyakodon_DB
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
