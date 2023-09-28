@@ -1,0 +1,86 @@
+.show{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bolder;
+    background-color: rgba(250, 245, 232, 1);
+    letter-spacing: 7px;
+    color: rgb(128, 128, 128);
+    flex-flow: column;
+    text-align: center;
+    line-height: 7ex;
+    
+    
+}
+
+.name{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+    background-color: rgba(250, 245, 232, 1);
+    letter-spacing: 10px;
+    color: rgb(91, 88, 84);
+    flex-flow: column;
+    text-align: center;
+    line-height: 150px;
+    
+    
+}
+
+
+.genre2{
+    font-family: 'Noto Sans JP', sans-serif;
+   font-weight: 800;
+    font-size: 20px;
+    background-color: rgba(250, 245, 232, 1);
+    letter-spacing: 10px;
+    color: rgb(122, 119, 111);
+    flex-flow: column;
+    
+    line-height: 40px;
+    margin: 50px 200px 50px 200px;
+    
+}
+
+
+.about{
+    font-family: 'Noto Sans JP', sans-serif;
+   font-weight: 400;
+    font-size: 17px;
+    background-color: rgba(250, 245, 232, 1);
+    letter-spacing: 5px;
+    color: rgb(128, 128, 128);
+    flex-flow: column;
+    
+    line-height: 25px;
+    margin: 40px 80px 20px 80px;
+    
+}
+
+
+.like{
+    font-family: 'Noto Sans JP', sans-serif;
+   font-weight: 400;
+    font-size: 17px;
+    background-color: rgba(250, 245, 232, 1);
+    letter-spacing: 5px;
+    color: rgb(128, 128, 128);
+    flex-flow: column;
+    
+    line-height: 25px;
+    margin: 40px 80px 20px 80px;
+    
+}
+
+
+.comment-wrapper{
+    font-family: 'Noto Sans JP', sans-serif;
+   font-weight: 400;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    letter-spacing: 5px;
+    color: rgb(128, 128, 128);
+    flex-flow: column;
+    
+    line-height: 25px;
+    margin: 40px 80px 20px 80px;
+    
+}

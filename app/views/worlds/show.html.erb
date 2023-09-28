@@ -1,9 +1,30 @@
-<h1>HERITOr</h1>
+
+
 <h3></h3>
 <div class=“world”>
-  <p><%= @world.name %></p>
-  <p><%= image_tag @world.image_url, size: "250x200" if @world.image? %></p>
-  <p><%= @world.created_at %></p>
+
+<div class="name">
+<p><%= @world.name %></p>
+
+  
+<p><%= image_tag @world.image_url, size: "700x400" if @world.image? %></p>
+ 
+<div class="genre2">
+<p><%= @world.genre %></p>
+
+
+  <p><%= @world.address %></p>
+  <p><%= @world.time %></p>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Martian+Mono:wght@800&family=Noto+Sans+JP:wght@100;300;500;600;800&family=Noto+Serif+JP:wght@200;900&display=swap" rel="stylesheet">
+   
+  <div class="about">
+  <p><%= @world.about %></p>
+   
+  
+  <div class="like">
     <% if user_signed_in? %>
     <% if current_user.already_liked?(@world) %>
       <%= link_to world_like_path(@world), method: :delete do %>
@@ -21,17 +42,13 @@
   </div>
 
 </div>
-<h2>いいねしたユーザー</h2>
-<ul>
-  <% @world.liked_users.each do |user| %>
-    <li><%= user.email %></li>
-  <% end %>
-</ul>
+
+
 <div class="comment-wrapper">
-  <p>コメント一覧</p>
+  
   <% @comments.each do |c| %>
     <div>
-      <%= c.user.email unless c.user.blank? %>
+      
       <br>
       <%= c.content %>
     </div>
@@ -42,7 +59,7 @@
     <%= form_with(model: [@world, @comment], local: true) do |f| %>
       <%= f.text_area :content %>
       <%= button_tag type: "submit" do %>
-        <i class="far fa-comments"></i> コメントする
+        <i class="far fa-comments">
       <% end %>
     <% end %>
   <% end %>

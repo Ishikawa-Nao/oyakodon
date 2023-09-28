@@ -1,22 +1,20 @@
-
-
-.world{
-    color:rgb(116, 114, 114);
- font-family: 'Noto Sans JP', sans-serif;
+.genre{
+    
+    font-family: 'Noto Sans JP', sans-serif;
     font-weight: bolder;
     background-color: rgba(252, 250, 244, 1);
     letter-spacing: 7px;
     color: rgb(128, 128, 128);
     display:flex;
     flex-flow: column;
-    
-    line-height: 20ex;
+    text-align: center;
+    line-height: 7ex;
     
 }
 
-h6{
+h5{
 
-    color: rgb(107, 107, 105);
+    color: rgb(168, 153, 81);
     font-size: 20px;
     font-family: 'Noto Sans JP', sans-serif;
     text-align: center;
@@ -94,8 +92,7 @@ h6{
     animation-delay: 20s;
   }
 
-
-
+  
 body{
     background:  rgba(250, 245, 232, 1);
 }
